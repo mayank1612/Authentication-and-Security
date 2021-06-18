@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGOOSE_STRING,
 {useNewUrlParser: true, useUnifiedTopology: true});
 
 const userSchema=new mongoose.Schema({
-    email:String,
+    username:String,
     password:String,
     googleId:String,
     secrets: [{type: String}]
@@ -135,7 +135,7 @@ app.post("/submit",function (req,res) {
 
 app.post("/register", function(req, res){
 
-    User.register({email: req.body.email}, req.body.password, function(err, user){
+    User.register({username: req.body.username}, req.body.password, function(err, user){
       if (err) {
         console.log(err);
         res.redirect("/register");
