@@ -152,7 +152,7 @@ app.post("/register", function(req, res){
 app.post("/login",function (req,res) {
 
     const user=new User({
-        email:req.body.email,
+        username:req.body.email,
         password:req.body.password
     });
 
