@@ -139,7 +139,7 @@ app.post("/register", function(req, res){
       if (err) {
         console.log(err);
         //res.redirect("/register");
-        res.render("Register using Google ☺");
+        res.send("Register using Google ☺");
       } else {
         passport.authenticate("local")(req, res, function(){
           res.redirect("/secrets");
