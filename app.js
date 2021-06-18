@@ -138,8 +138,8 @@ app.post("/register", function(req, res){
     User.register({email: req.body.email}, req.body.password, function(err, user){
       if (err) {
         console.log(err);
-        //res.redirect("/register");
-        res.send("Register using Google ☺");
+        res.redirect("/register");
+        
       } else {
         passport.authenticate("local")(req, res, function(){
           res.redirect("/secrets");
